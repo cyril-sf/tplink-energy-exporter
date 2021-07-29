@@ -1,10 +1,12 @@
 {
   "name": "tplink-energy-exporter",
+  "description": "A command line tool to read and export energy usage",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "bin": "./index.js",
   "dependencies": {
+    "argparse": "^2.0.1",
     "tplink-smarthome-api": "^3.3.0"
   }
 }
