@@ -2,16 +2,20 @@
 
 const { ArgumentParser } = require('argparse');
 const { description, version } = require('./package.json');
+const { Client } = require('tplink-smarthome-api');
+
+function saveToDisk() {
+
+}
 
 async function main({device, year, month}) {
-    const { Client } = require('tplink-smarthome-api');
-
     const client = new Client();
 
     const plug = await client.getDevice({ host: device});
 
     const dailyStats = await plug.emeter.getDayStats(parseInt(year), parseInt(month));
 
+    saveToDisk();
     console.log(dailyStats);
 }
 
